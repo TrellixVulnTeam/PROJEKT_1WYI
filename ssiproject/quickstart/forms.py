@@ -33,7 +33,7 @@ class VisitFormP(forms.ModelForm):
 		
 class VisitFormD(forms.ModelForm):
 	title = forms.CharField(help_text='Required. Format: DDDDDDDDDD. Maximum 100 characters')
-	desc = forms.CharField(help_text='Required. Format: DDDDDDDDDD. Maximum 100 characters')
+	desc = forms.CharField(help_text='Required. Format: DDDDDDDDDD. Maximum 300 characters')
 	date = forms.DateField(help_text='Required. Format: YYYY-MM-DD')
 	owner = forms.ModelChoiceField(queryset=PatientProfile.objects.all(), help_text='Required.', to_field_name="user")
 	class Meta:
