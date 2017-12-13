@@ -1,0 +1,71 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+
+<button type="button" class="btn btn-info btn-lg visit-add" data-toggle="modal" data-target="#myModal">Dodaj wizytę</button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Data Wizyty</th>
+        <th>Cel</th>
+        <th>Opis</th>
+		<th>Pacjent</th>
+		<th>Doktor</th>
+		<th>Akcept</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for visit in visits  %}
+		<tr>
+			
+			<td>{{ visit.date|date }}</td>
+			<td>{{ visit.title }}</td>
+			<td>{{ visit.desc }}</td>
+			<td>{{ visit.owner.user.first_name }} {{ visit.owner.user.last_name }}</td>
+			<td>{{ visit.doctor.user.first_name }} {{ visit.doctor.user.last_name }}</td>
+			<td>{{ visit.isAccepted }}</td>
+		</tr>
+
+	{% empty %}
+		<li>Nie dodano jeszcze żadnych wizyt dla tego użytkownika</li>
+	{% endfor %}
+	
+    </tbody>
+  </table>
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Dodaj wizytę</h4>
+      </div>
+      <div class="modal-body">
+          <form method="post">
+    {% csrf_token %}
+    {% for field in visit_form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+
+    <button type="submit">Zarejestruj się!</button>
+  </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

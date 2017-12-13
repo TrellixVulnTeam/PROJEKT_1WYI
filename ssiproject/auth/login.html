@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Szpital</title>
+
+    <!-- Bootstrap -->
+
+   
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   <div class="container"> 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">Szpital</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="index.html">Strona Główna</a></li>
+      <li ><a href="register.html">Rejestracja</a></li>
+      <li class="active"><a href="login.html">Logowanie</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+  </div>
+  <div class="container">
+
+<div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<form role="form">
+			
+				<h2>Zaloguj się</h2>
+				<form method='post' action="{%  url 'loginapp:login' %}">
+				<div class="form-group">
+                    <input type="text" name="username" id="email" class="form-control input-lg" placeholder="Login">
+				</div>
+				<div class="form-group">
+                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Hasło">
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Logowanie">
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6">
+						<a href="register.html" class="btn btn-lg btn-primary btn-block">Rejestracja</a>
+					</div>
+				</div>
+			
+			</form>
+		</form>
+	</div>
+</div>
+
+</div>
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

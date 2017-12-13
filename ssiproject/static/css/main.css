@@ -1,0 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+body {
+	 font-family: 'Oswald', sans-serif !important
+}
+a {
+    color: #A1C00A;
+}
+a:hover{
+    text-decoration: none;
+	color: #697C0D;
+}
+input{
+	background-color: #EDEDED;
+	text-align: center;
+}
+.navbar {
+	z-index:99;
+	margin: 0;
+}
+.container{
+	padding-top: 30px;
+	width: 80%;
+	position: relative;
+	margin: 0 auto;
+	background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#ECECEC, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ECECEC, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ECECEC, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ECECEC, white);
+	padding: 60px;
+	height: 100%;
+}
+.main-container{
+	padding: 10% 0;
+	font-size: 30px;
+	text-align: center;
+
+}
+#myCarousel{
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	margin: 0;
+}
+
+.carousel-inner .item img{
+	width: 100%;
+}
+.carousel-caption{
+	bottom: 45%;
+}
+.carousel-caption h3 {
+	font-size: 90px
+}
+.visit-add{
+	float: right;
+	position: absolute;
+	bottom: 4%;
+}
+.figure-img{
+	float: right!important;
+	max-width: 350px;
+}

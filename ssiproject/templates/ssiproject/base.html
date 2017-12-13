@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<html>
+<head>
+<title>LIMO - Administracja</title>
+<script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+</head>
+<body>
+<div class = "nav-bar left">
+<div class = "nav-logo">
+<h1>cookster</h1>
+<p> CRM SYSTEM </p>
+</div> 
+	<ul>
+		<a href="{% url 'menu' %}"><li><img src="{% static 'img/menu-icon.png' %}"><p>Dania</p></li></a>
+		<a href="{% url 'employers' %}"><li><img src="{% static 'img/workers-icon.png' %}"><p>Pracownicy</p></li></a>
+		<a href="{% url 'products' %}"><li><img src="{% static 'img/products-icon.png' %}"><p>Produkty</p></li></a>
+		<a href="{% url 'administration' %}"><li><img src="{% static 'img/administration-icon.png' %}"><p>Administracja</p></li></a>
+		<a href="{% url 'orders' %}"><li><img src="{% static 'img/orders-icon.png' %}"><p>Zamówienia</p></li></a>
+	</ul>
+</div>
+<div class = "content">
+<div class = "overlay">
+	<div class="loader">COOKSTER</div>
+</div>
+{% block content %}
+
+{% endblock %}
+
+</div>
+<script src="{% static 'js/main.js' %}"></script>
+<script> 
+(function(){
+	
+})(jQuery);
+</script>
+</body>
+</html>

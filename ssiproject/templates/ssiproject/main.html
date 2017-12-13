@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+{% block content %}
+	{% if user.is_authenticated %}
+	{% if profiles %}
+		{% for profile in profiles %}
+			<div class="row">
+				<div class="col">
+				{% if profile.isMale %}
+					<img class ="figure-img" src ="https://marketplace.canva.com/MAB4Yqx-uWs/1/thumbnail/canva-young-executive-woman-profile-icon--MAB4Yqx-uWs.png">
+				{% else %}
+					<img class ="figure-img" src ="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png">
+				{% endif %}
+				</div>
+				<div class="col">
+					<h1 class="display-3">Witaj  
+					{{ user.first_name }} {{ user.last_name }},</h1>
+					<h1 class="display-4">Numer telefonu: {{ profile.phone }}</h1>
+					<h1 class="display-4">Data urodzin: {{ profile.birth|date:"M d, Y"  }}</h1>
+					<h1 class="display-4">PESEL {{ profile.pesel }}</h1>
+				</div>
+				
+			</div>
+		{% endfor %}
+	{% else %}
+    <p>Brak dostępu</p>
+	{% endif %}
+	{%endif%}
+
+{% endblock %}
